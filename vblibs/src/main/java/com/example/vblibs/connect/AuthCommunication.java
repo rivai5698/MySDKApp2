@@ -1,13 +1,15 @@
 package com.example.vblibs.connect;
+
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
-public interface CheckUserCommunication {
-    @POST("check-user")
+
+public interface AuthCommunication {
+    @POST("auth")
     @Multipart
-    Call<CheckUserResponse> check (
-            @Part("speaker") RequestBody speaker
+    Call<CheckAuthResponse> checkAuth(
+            @Part("api_key") RequestBody api_key
     );
 }

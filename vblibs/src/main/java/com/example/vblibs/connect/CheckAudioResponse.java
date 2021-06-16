@@ -5,42 +5,29 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ *
+ * @author thangth
+ */
 @Getter
 @Setter
 @Data
 public class CheckAudioResponse {
-    @SerializedName("status")
-    private Integer status;
-    @SerializedName("code")
-    private Integer code;
     @SerializedName("msg")
     private String msg;
+    @SerializedName("code")
+    private Integer code;
+    @SerializedName("error")
+    private String error;
 
     public CheckAudioResponse(){
 
     }
 
-    public CheckAudioResponse(Integer status, Integer code, String msg) {
-        this.status = status;
-        this.code = code;
+    public CheckAudioResponse(String msg, Integer code, String error) {
         this.msg = msg;
-
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
         this.code = code;
+        this.error = error;
     }
 
     public String getMsg() {
@@ -51,9 +38,25 @@ public class CheckAudioResponse {
         this.msg = msg;
     }
 
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
 
     @Override
     public String toString() {
-        return "CheckAudioResponse{" + "status=" + status + ", code=" + code + ", msg=" + msg + '}';
+        return "CheckAudioResponse{" + "msg=" + msg + ", code=" + code + ", error=" + error + '}';
     }
+
 }

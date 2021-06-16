@@ -1,25 +1,18 @@
 package com.example.vblibs.module;
 
 public class AudioCheckResultResponse {
-    Integer status;
+
     Integer code;
     String msg;
+    String error;
 
     public AudioCheckResultResponse() {
     }
 
-    public AudioCheckResultResponse(Integer status, Integer code, String msg) {
-        this.status = status;
+    public AudioCheckResultResponse(Integer code, String msg, String error) {
         this.code = code;
         this.msg = msg;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
+        this.error = error;
     }
 
     public Integer getCode() {
@@ -38,8 +31,19 @@ public class AudioCheckResultResponse {
         this.msg = msg;
     }
 
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
     @Override
     public String toString() {
-        return "AudioCheckResultResponse{" + "status=" + status + ", code=" + code + ", msg=" + msg + '}';
+        return "AudioCheckResultResponse{" + "code=" + code + ", msg=" + msg + ", error=" + error + '}';
     }
+
+
+
 }
