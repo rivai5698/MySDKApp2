@@ -57,7 +57,7 @@ public class Verify8KVoiceId {
                 switch (response.code()) {
                     case 200:
                         // System.out.println("res in: " + response.body());
-                        if (response.body().getCode() == 1) {
+                        if (response.body().getStatus_code() == 1) {
                             Double score = Math.round(response.body().getScore() * 100.0) / 100.0;
                             responseResult.setScore(score);
                             responseResult.setMsg(response.body().getMsg());
